@@ -23,4 +23,3 @@ layout: default
   </ul>
 {% endfor %}
 
-</div>

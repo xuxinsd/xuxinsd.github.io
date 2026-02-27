@@ -3,36 +3,37 @@ layout: home
 ---
 
 <style>
-  .content-container {
-    max-width: 800px;  /* 限制最大宽度，让眼睛看文字不累 */
-    margin: 0 auto;    /* 居中对齐 */
-    padding: 20px;     /* 四周留白 */
-    line-height: 1.8;  /* 增加行间距，更有阅读感 */
-    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  .category-card {
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: #f6f8fa;
+    transition: transform 0.2s;
   }
-  ul { list-style: none; padding-left: 0; }
-  li { margin-bottom: 15px; border-bottom: 1px dashed #eee; padding-bottom: 10px; }
-  a { text-decoration: none; color: #007bff; font-weight: 500; }
-  a:hover { color: #0056b3; text-decoration: underline; }
-  .date { color: #999; font-family: monospace; margin-right: 10px; }
-  .category-title { border-left: 5px solid #333; padding-left: 15px; margin-top: 40px; }
+  .category-card:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  .category-title { font-size: 1.5rem; color: #0366d6; margin-top: 0; }
+  .stats { color: #586069; font-size: 0.9rem; }
 </style>
 
-<div class="content-container">
+# 📂 内容知识库
 
-# 📚 我的数字花园
-
-{% for category in site.categories %}
-  <h2 class="category-title">📂 {{ category[0] }}</h2>
-  <ul>
-    {% for post in category[1] %}
-      <li>
-        <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-{% endfor %}
-
+<div class="category-grid">
+  {% for category in site.categories %}
+    <div class="category-card">
+      <h2 class="category-title">
+        <a href="/category/{{ category[0] | slugify }}.html">📂 {{ category[0] }}</a>
+      </h2>
+      <p class="stats">共 {{ category[1].size }} 篇文章</p>
+      <ul>
+        {% for post in category[1] limit:3 %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+      {% if category[1].size > 3 %}
+        <a href="/category/{{ category[0] | slugify }}.html" style="font-size: 0.8rem;">查看该分类下全部文章 →</a>
+      {% endif %}
+    </div>
+  {% endfor %}
 </div>
 

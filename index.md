@@ -1,18 +1,26 @@
 ---
-layout: home
+layout: default
 ---
 
-# 📚 我的数字花园
+<header>
+  <h1>笔耕不辍</h1>
+  <p>分类存档 · 深度思考 · 法律与生活</p>
+</header>
+
+<div class="main-content">
+
+# 📚 文章归档
 
 {% for category in site.categories %}
   ## 📂 {{ category[0] }}
   <ul>
     {% for post in category[1] %}
       <li>
-        <span style="color: #999; font-family: monospace;">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <a href="{{ post.url }}" style="font-weight: 500; margin-left: 10px;">{{ post.title }}</a>
+        <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <a href="{{ post.url }}">{{ post.title }}</a>
       </li>
     {% endfor %}
   </ul>
 {% endfor %}
 
+</div>

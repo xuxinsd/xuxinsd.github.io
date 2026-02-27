@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "公众号：鑫法言说"
+categories: 生活
 ---
 
 # 欢迎来到我的博客

@@ -1,57 +1,37 @@
 ---
 ---
-/* 基础重置 */
-* { box-sizing: border-box; }
-
 body {
   margin: 0;
   padding: 0;
   font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.8;
   color: #333;
-  background-color: #f9f9f9; /* 浅灰色背景，更有质感 */
+  background-color: #f5f7f9;
 }
 
-/* 核心容器：解决“铺满全屏”的关键 */
-.main-wrapper {
-  max-width: 900px;      /* 限制内容宽度，不让眼球左右扫视太累 */
-  width: 92%;           /* 在手机等小屏幕上两边留点缝隙 */
-  margin: 40px auto;    /* 居中 */
-  background: #fff;     /* 文字区域白色 */
-  padding: 40px;        /* 内部留白 */
-  border-radius: 8px;   /* 圆角 */
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* 淡淡的阴影 */
+/* 统一的容器 */
+.container {
+  max-width: 900px;
+  width: 92%;
+  margin: 40px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+  min-height: 80vh; /* 保证内容少时也有一定高度 */
 }
 
-/* 标题样式 */
-h1, h2, h3 { color: #2c3e50; line-height: 1.3; }
-
-/* 响应式调整：针对手机屏幕 */
 @media (max-width: 768px) {
-  .main-wrapper {
-    width: 100%;        /* 手机端占满 */
-    margin: 0 auto;     /* 去掉上下边距 */
-    padding: 20px 15px; /* 减小留白 */
-    border-radius: 0;   /* 去掉圆角 */
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 15px;
+    border-radius: 0;
   }
-  body { font-size: 17px; background-color: #fff; }
 }
 
-/* 图片自适应 */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-}
-
-/* 列表样式 */
-ul { padding: 0; list-style: none; }
-li {
-  border-bottom: 1px solid #eee;
-  padding: 15px 0;
-}
-a { color: #0366d6; text-decoration: none; }
-a:hover { color: #f60; }
+/* 文章内部排版优化 */
+article img { max-width: 100%; height: auto; display: block; margin: 20px auto; border-radius: 6px; }
+article p { margin-bottom: 1.5em; }
 

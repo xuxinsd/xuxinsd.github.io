@@ -1,45 +1,57 @@
 ---
 ---
-@import "{{ site.theme }}";
-
-// 1. 全局基础设置
+/* 核心布局 */
 body {
+  margin: 0;
+  padding: 0;
   font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  font-size: 20px;      // 进一步加大字号，提升阅读体验
-  line-height: 1.8;     // 适中的行高
+  font-size: 20px;
+  line-height: 1.8;
   color: #333;
-  word-wrap: break-word; // 防止长单词撑破布局
+  background-color: #fff;
 }
 
-// 2. 强力破解主题宽度限制（解决文章过窄、留白过大的核心）
-.main-content, .wrapper, .container-lg, .post {
-  max-width: 85% !important;    // 将宽度从固定数值改为百分比，利用起屏幕空间
-  width: 1200px !important;     // 在大屏幕上最大展示 1200px，防止过宽导致眼累
-  margin: 0 auto !important;    // 保持水平居中
-  padding: 2rem 1.5rem !important;
+/* 容器：这是控制宽窄的关键 */
+.main-content, .container, .wrapper, article {
+  max-width: 1100px; /* 设定一个更宽的阅读范围 */
+  width: 90%;       /* 在小屏幕上占据 90% */
+  margin: 0 auto;   /* 居中 */
+  padding: 50px 20px;
 }
 
-// 3. 响应式布局：让它在不同屏幕上自适应
-@media screen and (max-width: 768px) {
-  .main-content, .wrapper, .container-lg {
-    max-width: 95% !important;  // 在手机端几乎占满全屏，避免两侧留白浪费空间
-    padding: 1rem !important;
-    font-size: 18px !important; // 手机端字号微调，更符合手持习惯
-  }
+/* 头部美化（找回刚才的美感） */
+header {
+  background: linear-gradient(120deg, #155799, #159957);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
 }
 
-// 4. 图片自适应美化
-img {
-  display: block;
-  margin: 1.5rem auto;          // 图片上下留出间距
-  max-width: 100%;              // 绝不超出屏幕宽度
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); // 给图片加点淡阴影，更有高级感
+/* 首页列表美化 */
+h1, h2, h3 { color: #2c3e50; }
+ul { list-style: none; padding: 0; }
+li {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
 }
-
-// 5. 调整页眉（如果使用的是 Cayman 主题）
-.page-header {
-  padding: 3rem 2rem !important; // 缩小巨大的页眉高度，减少首屏垂直滚动
+.date {
+  font-family: monospace;
+  color: #999;
+  margin-right: 20px;
+  flex-shrink: 0;
 }
+a {
+  text-decoration: none;
+  color: #0366d6;
+  font-weight: 500;
+}
+a:hover { color: #f60; text-decoration: underline; }
 
+/* 响应式：手机端自动变宽 */
+@media (max-width: 768px) {
+  body { font-size: 18px; }
+  .main-content { width: 95%; padding: 20px 10px; }
+}

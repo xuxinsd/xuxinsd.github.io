@@ -1,9 +1,9 @@
 # 网站设置
 title: 徐鑫律师的实务分享|公众号：鑫法言说  # 这里的文字会显示在浏览器标签页和网页顶部
-description: 记录思考，分享生活，同步自微信公众号。 # 这里的文字是副标题
 
-# 主题设置（换一个更清爽的皮肤）
-remote_theme: pages-themes/architect@v0.2.0
+description: 这里是我的数字后花园，分类存放公众号精选。
+
+remote_theme: pages-themes/cayman@v0.2.0 # 这个主题有巨大的彩色渐变页眉，视觉冲击力强
 
 # 社交链接（可选，如果不想要直接删掉这行）
 github_username: xuxinsd

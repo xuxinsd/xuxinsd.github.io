@@ -2,7 +2,7 @@
 layout: home
 ---
 
-# 📚 徐鑫律师| 公众号：鑫法言说
+# 📚 我的内容仓库
 
 {% assign grouped_posts = site.posts | group_by: "categories" %}
 

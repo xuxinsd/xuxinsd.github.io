@@ -3,18 +3,48 @@ layout: home
 ---
 
 <style>
-  .category-card {
-    border: 1px solid #e1e4e8;
-    border-radius: 6px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    background-color: #f6f8fa;
-    transition: transform 0.2s;
+  .content-container {
+    max-width: 1000px;  /* 从 800px 增加到 1000px，页面更宽阔 */
+    margin: 0 auto;
+    padding: 40px 20px; /* 增加上下留白，更有呼吸感 */
+    
+    /* 字体与行距优化 */
+    font-size: 18px;    /* 增大基础字号 */
+    line-height: 2.0;   /* 增大行间距到 2.0 倍，阅读不费劲 */
+    color: #333;        /* 颜色深一些，对比度更高 */
+    
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   }
-  .category-card:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-  .category-title { font-size: 1.5rem; color: #0366d6; margin-top: 0; }
-  .stats { color: #586069; font-size: 0.9rem; }
+  
+  h1 { font-size: 2.5rem; margin-bottom: 30px; }
+  h2 { font-size: 1.8rem; margin-top: 50px; }
+  
+  ul { list-style: none; padding-left: 0; }
+  li { 
+    margin-bottom: 20px; 
+    padding-bottom: 10px; 
+    border-bottom: 1px solid #f0f0f0; 
+  }
+  
+  a { 
+    text-decoration: none; 
+    color: #0366d6; 
+    font-weight: 500; 
+    transition: 0.3s;
+  }
+  a:hover { color: #f60; }
+  
+  .date { 
+    color: #888; 
+    font-size: 0.9em; 
+    margin-right: 15px; 
+    font-family: Georgia, serif; 
+  }
 </style>
+
+<div class="content-container">
+
+</div>
 
 # 📂 内容知识库
 

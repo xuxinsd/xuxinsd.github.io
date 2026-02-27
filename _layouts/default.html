@@ -5,41 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} | {{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <style>
-    /* 简单的导航样式 */
-    .nav-header {
-      border-bottom: 1px solid #eee;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .back-link {
-      text-decoration: none;
-      color: #0366d6;
-      font-size: 0.9em;
-      font-weight: bold;
-    }
-    .back-link:hover { text-decoration: underline; }
-  </style>
 </head>
 <body>
   <div class="container">
-    <nav class="nav-header">
-      <a href="/" class="back-link">← 返回首页</a>
-      <span style="color: #999; font-size: 0.8em;">{{ site.title }}</span>
-    </nav>
+    
+    {% if page.url != "/" and page.url != "/index.html" %}
+      <nav style="margin-bottom: 30px;">
+        <a href="/" style="text-decoration: none; color: #0366d6; font-weight: bold;">
+          ← 返回首页目录
+        </a>
+        <hr style="border: 0; border-top: 1px solid #eee; margin-top: 15px;">
+      </nav>
+    {% endif %}
 
     <article>
+      {% if page.date %}
+        <h1 style="margin-bottom: 10px;">{{ page.title }}</h1>
+        <p style="color: #999; font-size: 0.9em;">发布日期：{{ page.date | date: "%Y-%m-%d" }}</p>
+      {% endif %}
+
       {{ content }}
     </article>
 
-    <hr style="margin-top: 50px; border: 0; border-top: 1px solid #eee;">
-    <footer style="text-align: center; padding: 20px 0;">
-      <a href="/" class="back-link">回到目录</a>
-    </footer>
+    {% if page.url != "/" and page.url != "/index.html" %}
+      <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px dashed #eee; text-align: center;">
+        <a href="/" style="text-decoration: none; color: #0366d6;">回到首页</a>
+      </footer>
+    {% endif %}
+
   </div>
 </body>
 </html>
-

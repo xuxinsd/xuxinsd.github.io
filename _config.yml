@@ -3,7 +3,7 @@ title: 公众号：鑫法言说  # 这里的文字会显示在浏览器标签页
 
 description: 徐鑫律师的实务分享
 
-remote_theme: pages-themes/cayman@v0.2.0 # 这个主题有巨大的彩色渐变页眉，视觉冲击力强
+remote_theme: pages-themes/minimal@v0.2.0 # 这个主题有巨大的彩色渐变页眉，视觉冲击力强
 
 # 社交链接（可选，如果不想要直接删掉这行）
 github_username: xuxinsd

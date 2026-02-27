@@ -2,19 +2,21 @@
 layout: home
 ---
 
-# 欢迎来到徐鑫律师的的频道--公众号：鑫法言说
+# 📚 徐鑫律师| 公众号：鑫法言说
 
+{% assign grouped_posts = site.posts | group_by: "categories" %}
 
-<img width="258" height="258" alt="image" src="https://github.com/user-attachments/assets/103ac583-5378-4159-9258-521ebaefe3f3" />
-
-## 文章列表
-
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }} - {{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
-
-<img width="1014" height="219" alt="image" src="https://github.com/user-attachments/assets/b616269d-1942-4238-a9c7-3c322518ee3a" />
+{% for group in grouped_posts %}
+  ### 📂 {{ group.name | default: "未分类" }}
+  <ul style="list-style: none; padding-left: 10px;">
+    {% for post in group.items %}
+      <li style="margin-bottom: 8px;">
+        <span style="color: #666; font-size: 0.9em;">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <a href="{{ post.url }}" style="font-weight: bold; margin-left: 10px; text-decoration: none;">
+          {{ post.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  <hr style="border: 0.5px solid #eee;">
+{% endfor %}

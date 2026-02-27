@@ -7,3 +7,9 @@ remote_theme: pages-themes/minimal@v0.2.0 # 这个主题有巨大的彩色渐变
 
 # 社交链接（可选，如果不想要直接删掉这行）
 github_username: xuxinsd
+
+gems: [jekyll-paginate]
+paginate: 10  # 每页只显示10篇
+paginate_path: "/page:num/"
+
+

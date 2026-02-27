@@ -1,0 +1,37 @@
+---
+---
+@import "{{ site.theme }}"; // 这一行保留原主题的基础设置
+
+body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 19px;      // 基础字号调大
+  line-height: 2.0;     // 行间距调大
+  color: #333;
+}
+
+// 限制文章和页面的显示宽度并居中
+.wrapper, .container-lg, .main-content {
+  max-width: 1000px !important; // 强制更宽的版面
+  margin: 0 auto !important;
+  padding: 40px 30px !important;
+}
+
+// 针对正文段落的间距优化
+p {
+  margin-bottom: 1.5em;
+}
+
+// 针对标题的间距优化
+h1, h2, h3 {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  line-height: 1.4;
+}
+
+// 调整图片，使其默认居中且宽度自适应
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: 8px; // 给图片加一点圆角，更高级
+}
